@@ -1,4 +1,4 @@
-package com.hotiver.dieTogether;
+package com.hotiver.dieTogether.Listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;

@@ -1,4 +1,4 @@
-package com.hotiver.dieTogether;
+package com.hotiver.dieTogether.Listener;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;

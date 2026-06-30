@@ -1,4 +1,4 @@
-package com.hotiver.dieTogether;
+package com.hotiver.dieTogether.common;
 
 public enum Lang {
     EN("en"),

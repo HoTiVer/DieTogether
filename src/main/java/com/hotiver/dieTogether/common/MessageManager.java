@@ -1,4 +1,4 @@
-package com.hotiver.dieTogether;
+package com.hotiver.dieTogether.common;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

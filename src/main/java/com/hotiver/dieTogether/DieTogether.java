@@ -1,5 +1,9 @@
 package com.hotiver.dieTogether;
 
+import com.hotiver.dieTogether.Listener.DamageListener;
+import com.hotiver.dieTogether.Listener.DeathListener;
+import com.hotiver.dieTogether.Listener.HealthScoreListener;
+import com.hotiver.dieTogether.common.MessageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 

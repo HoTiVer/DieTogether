@@ -1,5 +1,7 @@
-package com.hotiver.dieTogether;
+package com.hotiver.dieTogether.Listener;
 
+import com.hotiver.dieTogether.common.Lang;
+import com.hotiver.dieTogether.common.MessageManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
