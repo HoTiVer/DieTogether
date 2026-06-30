@@ -1,0 +1,15 @@
+language: "en"
+
+messages:
+  en:
+    damage_receive: " receives "
+    damage: " damage. "
+    damage_reason: "Reason: "
+  ru:
+    damage_receive: " получает "
+    damage: " урона. "
+    damage_reason: "Причина: "
+  uk:
+    damage_receive: " отримує "
+    damage: " шкоди. "
+    damage_reason: "Причина: "
