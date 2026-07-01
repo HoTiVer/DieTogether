@@ -13,4 +13,17 @@ public enum Lang {
     public String getLanguageKey() {
         return languageKey;
     }
+
+    public static Lang fromString(String code) {
+        if (code == null || code.isBlank()) {
+            return EN;
+        }
+
+        String cleanedCode = code.trim().toUpperCase();
+        try {
+            return Lang.valueOf(cleanedCode);
+        } catch (IllegalArgumentException e) {
+            return EN;
+        }
+    }
 }

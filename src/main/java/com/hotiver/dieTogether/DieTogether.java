@@ -23,7 +23,7 @@ public final class DieTogether extends JavaPlugin {
         this.messageManager = new MessageManager(this);
         this.logger = this.getLogger();
 
-        Bukkit.getPluginManager().registerEvents(new DamageListener(messageManager, logger), this);
+        Bukkit.getPluginManager().registerEvents(new DamageListener(messageManager, logger, this), this);
         Bukkit.getPluginManager().registerEvents(new DeathListener(), this);
         Bukkit.getPluginManager().registerEvents(new HealthScoreListener(), this);
 
