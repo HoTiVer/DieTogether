@@ -1,15 +1,20 @@
 package com.hotiver.dieTogether.Listener;
 
 import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.plugin.Plugin;
 
 public class DeathListener implements Listener {
 
+    private final Plugin plugin;
     private boolean isResetting = false;
+
+    public DeathListener(Plugin plugin) {
+        this.plugin = plugin;
+    }
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
@@ -19,14 +24,14 @@ public class DeathListener implements Listener {
         Player firstToDie = event.getEntity();
 
         for (Player player : Bukkit.getOnlinePlayers()) {
-            if (player.equals(firstToDie)){
-                player.setGameMode(GameMode.SPECTATOR);
+            if (player.getUniqueId().equals(firstToDie.getUniqueId())) {
                 continue;
             }
-            player.setHealth(0.0);
-            player.setGameMode(GameMode.SPECTATOR);
+            player.damage(10000.0);
         }
-        isResetting = false;
+        Bukkit.getScheduler().runTask(plugin, () ->
+            isResetting = false
+        );
     }
 
 }
