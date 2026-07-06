@@ -10,16 +10,18 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityRegainHealthEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.scoreboard.*;
-
-import java.util.Objects;
 
 public class HealthScoreListener implements Listener {
 
+    private final Plugin plugin;
     private final Scoreboard scoreboard;
     private final Objective objective;
 
-    public HealthScoreListener() {
+    public HealthScoreListener(Plugin plugin) {
+        this.plugin = plugin;
 
         ScoreboardManager manager = Bukkit.getScoreboardManager();
         this.scoreboard = manager.getNewScoreboard();
@@ -52,21 +54,27 @@ public class HealthScoreListener implements Listener {
     @EventHandler
     public void onDamage(EntityDamageEvent event) {
         if (event.getEntity() instanceof Player player) {
-            Bukkit.getScheduler().runTask(Objects.requireNonNull(
-                    Bukkit.getPluginManager().getPlugin("DieTogether")), () -> {
-                updatePlayerHealth(player);
-            });
+            Bukkit.getScheduler().runTask(plugin, () ->
+                updatePlayerHealth(player)
+            );
         }
     }
 
     @EventHandler
     public void onHeal(EntityRegainHealthEvent e) {
         if (e.getEntity() instanceof Player player) {
-            Bukkit.getScheduler().runTask(Objects.requireNonNull(
-                    Bukkit.getPluginManager().getPlugin("DieTogether")), () -> {
-                updatePlayerHealth(player);
-            });
+            Bukkit.getScheduler().runTask(plugin, () ->
+                updatePlayerHealth(player)
+            );
         }
+    }
+
+    @EventHandler
+    public void onRespawn(PlayerRespawnEvent e) {
+        Player player = e.getPlayer();
+            Bukkit.getScheduler().runTask(plugin, () ->
+                updatePlayerHealth(player)
+            );
     }
 
     private void updatePlayerHealth(Player player) {

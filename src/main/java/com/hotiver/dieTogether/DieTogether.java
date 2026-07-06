@@ -25,7 +25,7 @@ public final class DieTogether extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new DamageListener(messageManager, logger, this), this);
         Bukkit.getPluginManager().registerEvents(new DeathListener(this), this);
-        Bukkit.getPluginManager().registerEvents(new HealthScoreListener(), this);
+        Bukkit.getPluginManager().registerEvents(new HealthScoreListener(this), this);
 
         logger.log(Level.INFO, "Die Together has been enabled");
     }
