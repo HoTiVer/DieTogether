@@ -3,7 +3,8 @@ package com.hotiver.dieTogether.common;
 public enum Lang {
     EN("en"),
     RU("ru"),
-    UK("uk");
+    UK("uk"),
+    DE("de");
 
     private final String languageKey;
 

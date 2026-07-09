@@ -33,9 +33,11 @@ Chat messages can be translated into:
 
 en English
 
-🇺🇦 Ukrainian
+ua Ukrainian
 
-🇷🇺 Russian
+ru Russian
+
+de German
 
 ### 🚀 Installation
 
