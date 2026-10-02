@@ -2,7 +2,7 @@ name: DieTogether
 version: '${version}'
 
 main: com.hotiver.dieTogether.DieTogether
-api-version: '26.2'
+api-version: '26.3'
 load: POSTWORLD
 
 authors: [ hotiver ]
